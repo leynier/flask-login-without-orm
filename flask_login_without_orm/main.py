@@ -29,9 +29,7 @@ class User(UserMixin):
 
     @staticmethod
     def get(user_id) -> Optional["User"]:
-        if user_id in users:
-            return users[user_id]
-        return None
+        return users.get(user_id)
 
     def __str__(self) -> str:
         return f"<Id: {self.id}, Username: {self.username}, Email: {self.email}>"
@@ -58,15 +56,11 @@ def load_user(user_id):
 
 @app.route("/")
 def index():
-    if current_user.is_authenticated:
-        return f"""
-<h1>Hi {current_user.username}</h1>
-<h3>Welcome to Flask Login without ORM!</h3>
-"""
-    return """
-<h1>Hi anonymous</h1>
-<h3>Welcome to Flask Login without ORM!</h3>
-"""
+    username = current_user.username if current_user.is_authenticated else "anonymous"
+    return f"""
+        <h1>Hi {username}</h1>
+        <h3>Welcome to Flask Login without ORM!</h3>
+    """
 
 
 @app.route("/login/<id>/<password>")
