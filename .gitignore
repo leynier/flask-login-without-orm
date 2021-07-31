@@ -131,3 +131,4 @@ dmypy.json
 # Custom added
 
 .vscode/**
+!.vscode/launch.json
