@@ -28,7 +28,7 @@ class User(UserMixin):
         self.password = password
 
     @staticmethod
-    def get(user_id) -> Optional["User"]:
+    def get(user_id: str) -> Optional["User"]:
         return users.get(user_id)
 
     def __str__(self) -> str:
@@ -50,7 +50,7 @@ with open("users.json") as file:
 
 
 @login_manager.user_loader
-def load_user(user_id):
+def load_user(user_id: str) -> Optional[User]:
     return User.get(user_id)
 
 
