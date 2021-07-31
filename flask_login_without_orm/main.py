@@ -54,16 +54,18 @@ def load_user(user_id):
     return User.get(user_id)
 
 
-@app.route("/")
+@app.get("/")
 def index():
-    username = current_user.username if current_user.is_authenticated else "anonymous"
+    username = "anonymous"
+    if current_user.is_authenticated:  # type: ignore
+        username = current_user.username  # type: ignore
     return f"""
         <h1>Hi {username}</h1>
         <h3>Welcome to Flask Login without ORM!</h3>
     """
 
 
-@app.route("/login/<id>/<password>")
+@app.get("/login/<id>/<password>")
 def login(id, password):
     user = User.get(id)
     print(user)
@@ -73,14 +75,14 @@ def login(id, password):
     return "<h1>Invalid user id or password</h1>"
 
 
-@app.route("/logout")
+@app.get("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect(url_for("index"))
 
 
-@app.route("/settings")
+@app.get("/settings")
 @login_required
 def settings():
     return "<h1>Route protected</h1>"
