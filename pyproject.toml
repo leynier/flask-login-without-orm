@@ -17,7 +17,7 @@ Flask-Login = "^0.5.0"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
 flake8 = "^4.0.1"
-black = "^21.12b0"
+black = "^22.1"
 isort = "^5.10.1"
 pytest-cov = "^3.0.0"
 
