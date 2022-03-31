@@ -109,14 +109,15 @@ dotenv = ["python-dotenv"]
 
 [[package]]
 name = "flask-login"
-version = "0.5.0"
-description = "User session management for Flask"
+version = "0.6.0"
+description = "User authentication and session management for Flask."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 
 [package.dependencies]
-Flask = "*"
+Flask = ">=1.0.4"
+Werkzeug = ">=1.0.1"
 
 [[package]]
 name = "importlib-metadata"
@@ -354,7 +355,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "4a32216561a72f68dd36e8ee38ca24134725412e51c7f0f6fea5a9de3877bdcf"
+content-hash = "d911173cc30eb4e9329e17b7263b6bce8349d4af42faa10627217b31886afd95"
 
 [metadata.files]
 atomicwrites = [
@@ -450,8 +451,8 @@ flask = [
     {file = "Flask-2.1.1.tar.gz", hash = "sha256:a8c9bd3e558ec99646d177a9739c41df1ded0629480b4c8d2975412f3c9519c8"},
 ]
 flask-login = [
-    {file = "Flask-Login-0.5.0.tar.gz", hash = "sha256:6d33aef15b5bcead780acc339464aae8a6e28f13c90d8b1cf9de8b549d1c0b4b"},
-    {file = "Flask_Login-0.5.0-py2.py3-none-any.whl", hash = "sha256:7451b5001e17837ba58945aead261ba425fdf7b4f0448777e597ddab39f4fba0"},
+    {file = "Flask-Login-0.6.0.tar.gz", hash = "sha256:aa84fcfb4c3cf09ca58c08e816b7bce73f1349ba1cf13d00d8dffc5872d5fcf6"},
+    {file = "Flask_Login-0.6.0-py3-none-any.whl", hash = "sha256:5cb01ce4dc253967b6ac722a11e46de83b6272ef7a19cc7b5725ae636916d04d"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-4.11.3-py3-none-any.whl", hash = "sha256:1208431ca90a8cca1a6b8af391bb53c1a2db74e5d1cef6ddced95d4b2062edc6"},
